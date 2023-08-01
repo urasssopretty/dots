@@ -72,7 +72,7 @@ awful.keyboard.append_global_keybindings{
       key         = 'p',
       description = 'show the menubar',
       group       = 'launcher',
-      -- on_press    = function() rofi -show drun end,
+      -- on_press    = function() awful.swawn('rofi -show drun') end,
       on_press    = function() menubar.show() end,
    },
 }
