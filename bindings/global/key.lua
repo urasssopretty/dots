@@ -72,8 +72,8 @@ awful.keyboard.append_global_keybindings{
       key         = 'p',
       description = 'show the menubar',
       group       = 'launcher',
-      on_press    = function() rofi -show drun end,
-      -- on_press    = function() menubar.show() end,
+      -- on_press    = function() rofi -show drun end,
+      on_press    = function() menubar.show() end,
    },
 }
 
@@ -250,7 +250,7 @@ awful.key.keygroups["custom"] = {
 
 awful.keyboard.append_global_keybindings{
    awful.key({
-      modifiers = { keys.super },
+      modifiers = { mod.super },
       keygroup = awful.key.keygroup.mykeygroup,
       description = "Only view tag",
       group = "tag",
