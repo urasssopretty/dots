@@ -2,21 +2,22 @@ local _M = {}
 
 local awful = require'awful'
 local hotkeys_popup = require'awful.hotkeys_popup'
+-- require'awful.hotkeys_popup.keys'
 local beautiful = require'beautiful'
 local wibox = require'wibox'
 
 local apps = require'config.apps'
 local mod = require'bindings.mod'
 
-_M.mainmenu = awful.menu{
+_M.mainmenu = awful.menu({
    items = {
-      {'terminal', apps.terminal}
-      {'browser'},
+      {'terminal', apps.terminal},
+      {'browser', function() awful.spawn('google-chrome-stable') end},
       {'rofi', function() awful.spawn('rofi -show drun') end},
       {
          'awesome',
          {
-            {'hotkeys', function() hotkeys_popup.show_help(nil, awful.screen.focused()) end},
+            {'hotkeys', function() hotkeys_popup.show_help() end},
             {'edit config', apps.editor_cmd .. ' ' .. awesome.conffile},
             {'restart', awesome.restart},
             {'quit', function() awesome.quit() end},
@@ -25,13 +26,13 @@ _M.mainmenu = awful.menu{
       {
          'logout/poweroff',
          {
-            {'log out', function() awful.spawn('loginctl terminate-session $XDG_SESSION_ID') end}
-            {'restart', function() awful.spawn('systemctl reboot') end}
-            {'shutdown', function() awful.spawn('systemctl poweroff') end}
+            {'log out', function() awful.spawn('loginctl terminate-session $XDG_SESSION_ID') end},
+            {'restart', function() awful.spawn('systemctl reboot') end},
+            {'shutdown', function() awful.spawn('systemctl poweroff') end},
          }
       },
    }
-}
+})
 
 _M.launcher = awful.widget.launcher{
    image = beautiful.awesome_icon,
