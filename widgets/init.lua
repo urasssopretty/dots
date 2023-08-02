@@ -10,10 +10,10 @@ local mod = require'bindings.mod'
 
 _M.mainmenu = awful.menu{
    items = {
-      {"terminal", apps.terminal}
-      {"files", apps.explorer}
-      {"browser", apps.browser}
-      {"rofi", apps.rofi}
+      {"terminal", apps.terminal},
+      {"files", apps.explorer},
+      {"browser", apps.browser},
+      {"rofi", apps.rofi},
       {
          "awesome",
          {
