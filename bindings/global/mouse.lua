@@ -1,8 +1,20 @@
-local awful = require("awful")
-local mod = require("bindings.mod")
+local awful = require'awful'
+local widgets = require'widgets'
 
-awful.mouse.append_global_mousebindings({
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    -- awful.button({ }, 4, awful.tag.viewprev),
-    -- awful.button({ }, 5, awful.tag.viewnext),
-})
+awful.mouse.append_global_mousebindings{
+   awful.button{
+      modifiers = {},
+      button    = 3,
+      on_press  = function() widgets.mainmenu:toggle() end
+   },
+   -- awful.button{
+   --    modifiers = {},
+   --    button    = 4,
+   --    on_press  = awful.tag.viewprev
+   -- },
+   -- awful.button{
+   --    modifiers = {},
+   --    button    = 5,
+   --    on_press  = awful.tag.viewnext
+   -- },
+}

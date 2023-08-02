@@ -1,9 +1,9 @@
 local _M = {
    terminal = os.getenv('TERMINAL') or 'alacritty',
-   editor = os.getenv('EDITOR')   or 'micro',
-   rofi = 'rofi -show drun', -- TODO: add theme
-   files = 'pcmanfm',
-   browser = 'google-chrome-stable',
+   editor   = os.getenv('EDITOR')   or 'micro',
+   browser   = "google-chrome-stable",
+   explorer   = "pcmanfm",
+   rofi   = "rofi -show drun",
 }
 
 _M.editor_cmd = _M.terminal .. ' -e ' .. _M.editor
