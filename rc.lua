@@ -7,11 +7,11 @@ pcall(require, "luarocks.loader")
 -- -- Widget and layout library
 -- local wibox = require("wibox")
 -- -- Theme handling library
--- local beautiful = require("beautiful")
+local beautiful = require("beautiful")
 -- -- Notification library
--- local naughty = require("naughty")
+local naughty = require("naughty")
 -- -- Declarative object management
--- local ruled = require("ruled")
+local ruled = require("ruled")
 -- local menubar = require("menubar")
 -- local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
@@ -33,7 +33,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --	Menu
 -- Create a launcher widget and a main menu
 
-require("layout_config.lua")
+require("layout_config")
 require("widgets")
 
 screen.connect_signal("request::wallpaper", function(s)

@@ -4,7 +4,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- require'awful.hotkeys_popup.keys'
 
 local app = require("app")
-local mod = require("bindings.modc")
+local mod = require("bindings.mod")
 local widgets = require("widgets")
 
 awful.key.keygroup["mykeygroup"] = "custom"
