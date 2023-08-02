@@ -18,13 +18,13 @@ awful.keyboard.append_global_keybindings{
       group       = 'awesome',
       on_press    = hotkeys_popup.show_help,
    },
-   awful.key{
-      modifiers   = {mod.super},
-      key         = 'w',
-      description = 'show main menu',
-      group       = 'awesome',
-      on_press    = function() widgets.mainmenu:show() end,
-   },
+   -- awful.key{
+   --    modifiers   = {mod.super},
+   --    key         = 'w',
+   --    description = 'show main menu',
+   --    group       = 'awesome',
+   --    on_press    = function() widgets.mainmenu:show() end,
+   -- },
    awful.key{
       modifiers   = {mod.super, mod.ctrl},
       key         = 'r',
@@ -72,7 +72,8 @@ awful.keyboard.append_global_keybindings{
       key         = 'p',
       description = 'show the menubar',
       group       = 'launcher',
-      on_press    = function() menubar.show() end,
+      on_press    = apps.rofi,
+      -- on_press    = function() menubar.show() end,
    },
 }
 
